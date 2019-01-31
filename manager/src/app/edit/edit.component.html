@@ -1,0 +1,24 @@
+<div class="container mt-4">
+  <div *ngIf="editProduct">
+    <div *ngIf="error">
+      <p class="text-muted">{{error}}</p>
+    </div>
+    <form (submit)="editing()">
+      <div class="form-group">
+        <label>Product Name:</label>
+        <input type="text" name="editProduct.title" class="form-control" [(ngModel)]="editProduct.title">
+      </div>
+      <div class="form-group">
+        <label>Price:</label>
+        <input type="text" name="editProduct.price" class="form-control" [(ngModel)]="editProduct.price">
+      </div>
+      <div class="form-group">
+        <label>Img Url:</label>
+        <input type="text" name="editProduct.imgurl" class="form-control" [(ngModel)]="editProduct.imgurl">
+      </div>
+      <button class="btn btn-primary mt-2" type="submit">Update</button>
+      <button (click)="deleteProduct(editProduct._id)" class="btn btn-danger mt-2 ml-4">Delete</button>
+    </form>
+
+  </div>
+</div>
